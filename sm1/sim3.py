@@ -8,9 +8,9 @@ C_d = 10  # cost for defender
 P_0 = 10  # initial punishment
 rep = 1  # reputation penalty
 
-# Define function phi(t)
+# Define function phi(t) #### need to change ############################
 def phi(t, alpha, gamma):  # Add gamma as a parameter
-    return 1 / (1 + alpha * t + gamma)  # Include gamma in the calculation
+    return 1 / (1 + alpha * t + gamma)  
 
 def phi_inverse(phi, alpha):
     return 1 / (alpha * phi) - 1 / alpha

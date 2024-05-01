@@ -32,7 +32,7 @@ def compute_transition_probs(alpha, gamma):
     return transition_probs
 
 def compute_utility(alpha, gamma, r, C, t_max):
-    transition_probs = compute_transition_probs(alpha, gamma)
+    transition_probs = compute_transition_probs(alpha, gamma) #########!!!! this transition_probs is not used in this function!
     
     # Initialize utility values
     utility_values = np.zeros(t_max + 3)  # Increase the size by 3
@@ -61,8 +61,8 @@ def display_utility_table(utility_values, alpha, gamma):
     return df
 
 # Define parameters
-alpha_values = [0.1, 0.2, 0.3, 0.4, 0.5]
-gamma_values = [0, 0.5, 1]
+alpha_values = [0.1, 0.2, 0.3, 0.4]
+gamma_values = [0, 1]  # Include gamma = 0 explicitly
 r = 10  # Reward
 C = 1  # Constant cost
 t_max = 10  # Maximum time step
@@ -92,3 +92,103 @@ for alpha in alpha_values:
         print(f"Utility Table for Alpha={alpha}, Gamma={gamma}:")
         print(table)
         print("\n")
+#################################################################################
+# changing the phi(t) function and add transition probs into calculating utility functions
+#################################################################################
+# import numpy as np
+# import pandas as pd
+# import matplotlib.pyplot as plt
+
+# def compute_transition_probs(alpha, gamma):
+#     transition_probs = np.zeros((4, 4))
+    
+#     # Transition from state S0 to S1
+#     transition_probs[0, 1] = alpha
+    
+#     # Transition from state S1 to S0'
+#     transition_probs[1, 2] = 1 - alpha
+    
+#     # Transition from state S0' to S0
+#     transition_probs[2, 0] = gamma * (1 - alpha)
+    
+#     # Transition from state S0' to S0'
+#     transition_probs[2, 2] = (1 - gamma) * (1 - alpha)
+    
+#     # Transition from state S0 to S0
+#     transition_probs[0, 0] = (1 - alpha)
+    
+#     # Transition from state S1 to S2
+#     transition_probs[1, 3] = alpha
+    
+#     # Transition from state S2 to S2
+#     transition_probs[3, 3] = alpha
+    
+#     # Transition from state S2 to S1
+#     transition_probs[3, 1] = 1 - alpha
+    
+#     return transition_probs
+
+# def compute_utility(alpha, gamma, r, C, t_max, lmbda):
+#     transition_probs = compute_transition_probs(alpha, gamma)
+    
+#     # Initialize utility values
+#     utility_values = np.zeros(t_max + 3)  # Increase the size by 3
+    
+#     # Compute utility for each state
+#     for t in range(t_max):
+#         # Utility for state S0
+#         utility_values[t] = np.sum(transition_probs[0] * (-C * np.sum(np.exp(-lmbda * np.arange(t))) + np.exp(-lmbda * t) * r))
+        
+#         # Utility for state S1
+#         utility_values[t + 1] = np.sum(transition_probs[1] * (-C * np.sum(np.exp(-lmbda * np.arange(t + 1))) + np.exp(-lmbda * (t + 1)) * r))
+        
+#         # Utility for state S0'
+#         utility_values[t + 2] = np.sum(transition_probs[2] * (-C * np.sum(np.exp(-lmbda * np.arange(t + 1))) + np.exp(-lmbda * (t + 2)) * r))
+        
+#         # Utility for state S2
+#         if t + 3 < t_max + 3:  # Check if index is within bounds
+#             utility_values[t + 3] = np.sum(transition_probs[3] * (-C * np.sum(np.exp(-lmbda * np.arange(t + 1))) + np.exp(-lmbda * (t + 3)) * r))
+        
+#     return utility_values
+
+
+# def display_utility_table(utility_values, alpha, gamma, lmbda):
+#     df = pd.DataFrame({'Time (t)': np.arange(len(utility_values)), 'Utility (U(t))': utility_values})
+#     df['Alpha'] = alpha
+#     df['Gamma'] = gamma
+#     df['Lambda'] = lmbda
+#     return df
+
+# # Define parameters
+# alpha_values = [0.1, 0.2, 0.3, 0.4]
+# gamma_values = [0, 1]  # Only include gamma = 0 and 1
+# r = 10  # Reward
+# C = 1  # Constant cost
+# t_max = 10  # Maximum time step
+# lmbda = 0.5  # Lambda value for the phi(t) function
+
+# # Create plot
+# plt.figure(figsize=(12, 8))
+
+# # Compute and plot utility values for each combination of alpha and gamma
+# for alpha in alpha_values:
+#     for gamma in gamma_values:
+#         utility_values = compute_utility(alpha, gamma, r, C, t_max, lmbda)
+#         plt.plot(range(len(utility_values)), utility_values, label=f'Alpha={alpha}, Gamma={gamma}')
+
+# # Add labels and legend to the plot
+# plt.xlabel('Time (t)')
+# plt.ylabel('Utility (U(t))')
+# plt.title('Utility Curves for Different Alpha and Gamma Values (Gamma=0, 1)')
+# plt.legend()
+# plt.grid(True)
+# plt.show()
+
+# # Display utility tables
+# for alpha in alpha_values:
+#     for gamma in gamma_values:
+#         utility_values = compute_utility(alpha, gamma, r, C, t_max, lmbda)
+#         table = display_utility_table(utility_values, alpha, gamma, lmbda)
+#         print(f"Utility Table for Alpha={alpha}, Gamma={gamma}, Lambda={lmbda}:")
+#         print(table)
+#         print("\n")
