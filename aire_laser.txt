@@ -1,0 +1,4 @@
+Ldogbone1_0, 165, Ldogbone1_1, 57, Ldogbone1_2, 32.86, Hdogbone1_0, 19, Hdogbone1_1, 13, Rdogbone1, 10583.10
+Ldogbone2_0, 180, Ldogbone2_1, 60, Ldogbone2_2, 35, Hdogbone2_0, 20, Hdogbone2_1, 14, Rdogbone2, 11743.10
+LCT1_0, 50, LCT1_1, 21, LCT1_2, 1, LCT1_3, 10.5, HCT1_0, 42, HCT1_1, 2, HCT1_2, 9.5, DCT1,1050.23
+LCT2_0, 55, LCT2_1, 23, LCT2_2, 2, LCT2_3, 12, HCT2_0, 45, HCT2_1, 3, HCT2_2, 10, DCT2,1239.54
