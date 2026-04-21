@@ -1,5 +1,14 @@
 # 🛠️ **Selfish Mining Mitigation in PoW Blockchains**
 
+Research artifact for the paper:
+
+> **Retaliation Game for Mitigating Selfish Mining Attacks in Blockchain Networks.**
+> Erfan, F., Bellaïche, M., & Halabi, T.
+> *13th International Conference on Game Theory for Networks (GameNet)*, Springer, March 2025, pp. 178–193.
+> [Springer Link](https://link.springer.com/chapter/10.1007/978-3-032-12915-4_11)
+
+---
+
 ## 📜 **Project Overview**
 
 This project addresses **selfish mining attacks** in Proof-of-Work (PoW) blockchain networks. Selfish mining occurs when miners or groups of miners withhold newly mined blocks, maintaining a private chain to gain an unfair advantage. This behavior wastes honest miners' resources and degrades the overall efficiency of the network.
@@ -55,6 +64,17 @@ The project contains the following key components:
 
 ---
 
+## 🔗 **Related Work**
+
+This work forms one half of a broader research effort on **attack–defense co-evolution** for selfish mining:
+
+- **Detection side** — machine-learning detector for selfish mining on large-scale blockchain networks: [SC_vulnerability_detection (selfish mining branch)](https://github.com/erfan38/SC_vulnerability_detection), published at *IEEE QRS 2024*.
+- **Mitigation side (this repo)** — game-theoretic framework for disincentivizing selfish behavior.
+
+Together, the two papers demonstrate a complete detection-and-response pipeline for selfish mining attacks.
+
+---
+
 ## 🤝 **Contributing**
 
 We welcome contributions! To contribute:
@@ -82,7 +102,27 @@ We welcome contributions! To contribute:
 
 If you use this project or our approach in your research, please cite our paper:
 
-Comming soon!
+```
+Erfan, F., Bellaïche, M., & Halabi, T. (2025, March).
+Retaliation Game for Mitigating Selfish Mining Attacks in Blockchain Networks.
+In International Conference on Game Theory for Networks (pp. 178–193).
+Cham: Springer Nature Switzerland.
+```
+
+BibTeX:
+
+```bibtex
+@inproceedings{erfan2025retaliation,
+  title={Retaliation Game for Mitigating Selfish Mining Attacks in Blockchain Networks},
+  author={Erfan, Fatemeh and Bellaïche, Martine and Halabi, Talal},
+  booktitle={International Conference on Game Theory for Networks},
+  pages={178--193},
+  year={2025},
+  month={March},
+  publisher={Springer Nature Switzerland},
+  address={Cham}
+}
+```
 
 ---
 
@@ -91,6 +131,7 @@ Comming soon!
 For questions or feedback, feel free to reach out:
 
 - **Email**: [fatemeh.erfan@polymtl.ca](mailto:fatemeh.erfan@polymtl.ca)
+- **Affiliation**: Postdoctoral Fellow, Polytechnique Montréal
 
 ---
 
